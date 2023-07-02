@@ -1,0 +1,95 @@
+{% extends 'master.html' %}
+{% include "header.html" %}
+{% block title%}Formulario de Reservas {% endblock %}
+{% block body %}
+      <!-- Agrega los enlaces CSS de Bootstrap -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <!-- Agrega el enlace CSS de SweetAlert -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.3/dist/sweetalert2.min.css">
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+ <div class="container">
+    <div class="row justify-content-center mt-5">
+      <div class="col-md-8">
+        <div class="formulario-container">
+          <h1 class="text-center mb-4">Formulario de Reservas</h1>
+          <form id="formulario-reservas" method="">
+            <div class="form-group">
+              <label for="ambiente">Ambiente</label>
+              <select class="form-control" id="ambiente" name="ambiente" required>
+                <option value="">Seleccione el ambiente que desea reservar</option>
+                {% for ambiente in ambientes %}
+                <option value="value"+{{ambiente.nombreambiente}}>{{ ambiente.nombreambiente }}</option>
+                {% endfor %}
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input type="text" class="form-control" id="nombre" name="nombre" required value="">
+            </div>
+            <div class="form-group">
+              <label for="apellido">Apellido</label>
+              <input type="text" class="form-control" id="apellido" name="apellido" required value="">
+            </div>
+            <div class="form-group">
+              <label for="telefono">Teléfono</label>
+              <input type="tel" class="form-control" id="telefono" name="telefono" pattern="[0-9]+" required value="">
+            </div>
+            <div class="form-group">
+              <label for="correo">Correo Electrónico</label>
+              <input type="email" class="form-control" id="correo" name="correo" required value="">
+            </div>
+            <div class="form-group">
+              <label for="alergias">Descripción de Alergias</label>
+              <textarea class="form-control" id="alergias" name="alergias" rows="3"></textarea value="">
+            </div>
+            <div class="form-group">
+              <label for="fecha">Fecha de Reserva</label>
+              <input type="date" class="form-control" id="fecha" name="fecha" required value="">
+            </div>
+            <div class="form-group">
+              <label for="cantidad">Cantidad de Personas</label>
+              <input type="number" class="form-control" id="cantidad" name="cantidad" required value="">
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar Reserva</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Agrega los scripts de JavaScript de Bootstrap y SweetAlert -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.3/dist/sweetalert2.min.js"></script>
+  <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+  <br>
+  {% include "footer.html" %}
+  <script>
+    /// Espera a que el DOM esté listo
+    document.addEventListener('DOMContentLoaded', function() {
+      // Selecciona el formulario
+      const form = document.getElementById('formulario-reservas');
+
+      // Escucha el evento de envío del formulario
+      form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Evita que el formulario se envíe de forma predeterminada
+
+        // Realiza aquí las operaciones de envío del formulario y almacenamiento en la base de datos
+
+        // Muestra una ventana emergente con una serpentina y el mensaje de "Reserva exitosa"
+        Swal.fire({
+          icon: 'success',
+          title: 'Reserva exitosa',
+          html: '<div class="text-center"><img src="https://i.pinimg.com/564x/81/17/f1/8117f124912bd8fcd2804fb645fd2570.jpg" style="width: 300px;"></div>',
+          showConfirmButton: false,
+          timer: 3000
+        }).then(function() {
+          // Restablece los campos del formulario
+          form.reset();
+        });
+      });
+    });
+
+  </script>
+{% endblock %}

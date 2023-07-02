@@ -1,0 +1,35 @@
+{% extends 'master.html' %}
+{% include 'header.html' %}
+
+{% block title %} Delete {% endblock %}
+
+{% block body %}
+<div class="container">
+    <table class="table">
+        <thead style="background-color: brown;color: aliceblue;">
+            <th>Numero de reserva</th>
+            <th>Fecha</th>
+            <th>Numero de comensales</th>
+            <th>Numero de cedula</th>
+            <th>Nro de cedula</th>
+            <th>Nombre de ambiente</th>
+            <th>Created_at</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{reservas.idreserva}}</td>
+                <td>{{reservas.fecha}}</td>
+                <td>{{reservas.cantidadepersonas}}</td>
+                <td>{{reservas.idcedula}}</td>
+                <td>{{reservas.idambiente}}</td>
+                <td>{{reservas.created_at}}</td>
+        </tbody>
+    </table>
+
+    <form action='' method="post">
+        Confirmar si desea eliminar el dato
+        <input type="submit" value="Si" class="btn btn-danger">
+        <a href='/registro' class="btn btn-dark">No</a>
+    </form>
+</div>
+{% endblock %}

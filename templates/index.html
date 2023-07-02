@@ -1,0 +1,143 @@
+{% extends 'master.html' %}
+{% include "header.html" %}
+{% block title%} Inicio {% endblock %}
+{% block body %}
+<div class="container">
+  <div class="row justify-content-center">
+      <div class="col-md-6 text-center">
+          <img src="https://www.logoarena.com/contestimages/public_new/10123/14322_1581447703_10123_.png" class="img-fluid" alt="Imagen">
+      </div>
+  </div>
+</div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="text-center">Platos a la carta más pedidos</h2>
+      </div>
+    </div>
+    <br>
+    
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card">
+          <img src="https://media.traveler.es/photos/63563d760825dfdce8534c50/master/w_1600,c_limit/iStock-153751732.jpg" class="card-img-top" alt="Plato 1" />
+          <div class="card-body">
+            <h5 class="card-title">FETUCCINI ALLA PUTTANESCA</h5>
+            <p class="card-text">"Los fetuccini alla puttanesca son un
+               plato de pasta napolitano con ajo, tomate, guindillas, 
+               aceite de oliva y anchoas. Su nombre proviene de las 
+               prostitutas de Nápoles y su sabor es dominado por el pescado."</p>
+            <p class="card-text">Precio: $10.00</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-3">
+        <div class="card">
+          <img src="https://media.traveler.es/photos/63563e0453805dbdd51dd129/master/w_1600,c_limit/iStock-962387858.jpg" class="card-img-top" alt="Plato 2" />
+          <div class="card-body">
+            <h5 class="card-title">TRENETTE AL PESTO</h5>
+            <p class="card-text">"Los Trenette al Pesto son un plato 
+              italiano famoso por su salsa verde de albahaca, ajo y 
+              aceite de oliva. A veces se añaden judías y patata cocida 
+              para realzar el sabor. También se puede hacer con tallarines
+               o linguine."</p>
+            <p class="card-text">Precio: $12.00</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-3">
+        <div class="card">
+          <img src="https://media.traveler.es/photos/6356408f93bb785c9cec6bbc/master/w_1600,c_limit/EN2X47.jpg" class="card-img-top" alt="Plato 3" />
+          <div class="card-body">
+            <h5 class="card-title">PASTA CON LE SARDE </h5>
+            <p class="card-text">"Este plato típico de Palermo combina 
+              sardinas frescas con hinojo silvestre, piñones, almendras
+               tostadas, pasas sultanas y azafrán. A veces se agrega 
+               anchoa para intensificar el sabor. Se sirve con bucatinis,
+                busiates o maccheroni y se hornea brevemente antes de 
+                servir."</p>
+            <p class="card-text">Precio: $12.00</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-3">
+        <div class="card">
+          <img src="https://tipsparatuviaje.com/wp-content/uploads/2020/03/sopa-de-minestrone.jpg" class="card-img-top" alt="Plato 4" />
+          <div class="card-body">
+            <h5 class="card-title">SOPA DE MINESTRONE</h5>
+            <p class="card-text">La de minestrone no es más que una suculenta sopa de verduras con un poco de pasta o sémola de arroz, que se come caliente y espesa como plato principal. Está considerada una comida con alto valor nutricional por la variedad de verduras y vegetales.</p>
+            <p class="card-text">Precio: $7.00</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<!-- lugares de Reserva -->
+
+  <div class="container">
+    <h2>Lugares de Reserva</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card bg-transparent">
+          <img class="card-img-top img-fluid d-block" src="https://i.pinimg.com/564x/a8/44/e8/a844e8749ea0c180114fe79b6c499458.jpg" alt="Lugar 1">
+          <div class="card-body bg-dark text-white">
+            <h5 class="card-title">Lugar 1</h5>
+            <div class="card-content">
+              <p class="card-text">Terraza</p>
+              <br>
+              <p class="card-text">Descripción: Disfruta de una experiencia al aire libre en nuestra hermosa terraza, rodeada de exuberante vegetación y con vistas panorámicas. Nuestros cómodos asientos al aire libre te permitirán relajarte mientras saboreas nuestras deliciosas opciones gastronómicas.</p>
+              <p class="card-text">Platos: Plato 1, Plato 2, Plato 3</p>
+              <p class="card-text">Precio: $10</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card bg-transparent">
+          <img class="card-img-top img-fluid d-block" src="https://i.pinimg.com/564x/f8/4b/df/f84bdf1f1d1863e49c4ca1f05983e9f2.jpg" alt="Lugar 2">
+          <div class="card-body bg-dark text-white">
+            <h5 class="card-title">Lugar 2</h5>
+            <div class="card-content">
+              <p class="card-text">Patio</p>
+              <br>
+              <p class="card-text">Descripción: Nuestro encantador patio interior te ofrece un ambiente tranquilo y acogedor. Con una mezcla de sombra y luz natural, es el lugar perfecto para disfrutar de una comida relajante. Nuestro amable personal estará encantado de atenderte y brindarte una experiencia memorable.</p>
+              <p class="card-text">Platos: Plato 4, Plato 5, Plato 6</p>
+              <p class="card-text">Precio: $12</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card bg-transparent">
+          <img class="card-img-top img-fluid d-block" src="https://i.pinimg.com/564x/b5/8b/ff/b58bff6c6a3c34d713307bf0c39480cc.jpg" alt="Lugar 3">
+          <div class="card-body bg-dark text-white">
+            <h5 class="card-title">Lugar 3</h5>
+            <div class="card-content">
+              <p class="card-text">Interior del Restaurante</p>
+              <br>
+              <p class="card-text">Descripción: Adéntrate en nuestro elegante y acogedor interior de restaurante. Nuestro diseño interior cuidadosamente elaborado crea un ambiente sofisticado y relajante. Disfruta de una cena íntima con amigos y seres queridos mientras nuestro equipo de chefs expertos te deleita con platos gourmet.
+              </p>
+              <p class="card-text">Platos: Plato 7, Plato 8, Plato 9</p>
+              <p class="card-text">Precio: $15</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <br>
+  <br>
+  <br>
+  {% include "footer.html" %}
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  
+  {% endblock %}

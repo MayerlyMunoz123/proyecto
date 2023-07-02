@@ -1,0 +1,55 @@
+{% extends 'master.html' %}
+{% include "header.html" %}
+{% block title %}Registro{% endblock %}
+{% block customCSS %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo.css') }}">
+{% endblock %}
+{% block body %}
+    <main>
+        <div class="form_class">
+          <table>
+            <tr>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Cédula</th>
+              <th>Teléfono</th>
+              <th>Ambiente</th>
+              <th>Nro de Reserva</th>
+              <th>Cantidad de personas</th>
+              <th>Created_at</th>
+            </tr>
+            <tbody>
+            {% for dato in datos %}
+            <tr
+            {% if loop.index %2 == 0 %}
+            style="background-color: rgb(217, 255, 243);"
+            {% else %}
+            style="background-color: rgb(248, 169, 169);"
+            {% endif %}
+            >
+              <td>{{ dato.nombre }}</td>
+              <td>{{ dato.apellido }}</td>
+              <td>{{ dato.idcedula }}</td>
+              <td>{{ dato.telefono }}</td>
+              <td>{{ dato.nombreambiente }}</td>
+              <td>{{ dato.idreserva }}</td>
+              <td>{{ dato.cantidadepersonas }}</td>
+              <td> <span style="font-size: 24px;color:green;">
+                <a href="/{{dato.idreserva}}/edit"> <i class="fas fa-edit"></i></a> </span>
+                 | <span style="font-size: 24px;color:red;">  
+                   <a href="/{{dato.idreserva}}/delete"> <i class="fas fa-trash-alt"></i></a></span></td>
+                   <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myOutput">Output</button></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+          </table>
+          <button type="button">
+            <span class="box">
+                Generar reportes
+            </span>
+        </button>
+        </div>
+      </main>
+       
+       
+{% endblock %}

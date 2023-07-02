@@ -1,0 +1,40 @@
+{% extends 'master.html' %} 
+{% include 'header.html' %}
+
+{% block title %} Update {% endblock %}
+ 
+ 
+{% block body %}
+<div class="container">
+    <form action='' method="POST">
+        <table class="table">
+            <tr>
+                <td>Fecha</td>
+                <td><input type="text" name="fecha" class="form-control" value="{{ reserva.fecha }}"></td>
+            </tr>
+            <tr>
+                <td>Cantidad de personas</td>
+                <td><input type="text" name="cantidadepersonas" class="form-control" value="{{ reserva.cantidadepersonas }}"></td>
+            </tr>
+            <tr>
+                <td>ID de cédula</td>
+                <td><input type="text" name="idcedula" class="form-control" value="{{ reserva.idcedula }}"></td>
+            </tr>
+            
+                <select class="form-control" id="ambiente" name="ambiente" required>
+                    <option value="">Seleccione el ambiente que desea reservar</option>
+                    {% for suerte in suerte %}
+                    <option value="{{ 'value' + ambiente.nombreambiente }}">{{ ambiente.nombreambiente }}</option>
+                    {% endfor %}
+                  </select>
+            
+            <tr>
+                <td colspan="2">
+                    <input type="submit" name="submit" value="Actualizar" class="btn btn-success">
+                    <a href='/registro' class="btn btn-dark">Cancelar</a>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+{% endblock %}
