@@ -2,32 +2,41 @@
 {% include 'header.html' %}
 
 {% block title %} Delete {% endblock %}
+{% block customCSS %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/delete_update.css') }}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+{% endblock %}
 
 {% block body %}
+<br><br>
 <div class="container">
     <table class="table">
-        <thead style="background-color: brown;color: aliceblue;">
-            <th>Numero de reserva</th>
-            <th>Fecha</th>
-            <th>Numero de comensales</th>
-            <th>Numero de cedula</th>
-            <th>Nro de cedula</th>
-            <th>Nombre de ambiente</th>
-            <th>Created_at</th>
-        </thead>
         <tbody>
             <tr>
+                <th>Numero de reserva</th>
                 <td>{{reservas.idreserva}}</td>
+            </tr>
+            <tr>
+                <th>Fecha</th>
                 <td>{{reservas.fecha}}</td>
+            </tr>
+            <tr>
+                <th>Numero de comensales</th>
                 <td>{{reservas.cantidadepersonas}}</td>
+            </tr>
+            <tr>
+                <th>Numero de cedula</th>
                 <td>{{reservas.idcedula}}</td>
-                <td>{{reservas.idambiente}}</td>
-                <td>{{reservas.created_at}}</td>
+            </tr>
+            <tr>
+                <th>Nombre de ambiente</th>
+                <td>{{ambientes.nombreambiente}}</td>
+            </tr>
         </tbody>
     </table>
 
     <form action='' method="post">
-        Confirmar si desea eliminar el dato
+        <h2>Confirmar si desea eliminar el dato</h2>
         <input type="submit" value="Si" class="btn btn-danger">
         <a href='/registro' class="btn btn-dark">No</a>
     </form>

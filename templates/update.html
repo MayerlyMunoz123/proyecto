@@ -1,11 +1,14 @@
-{% extends 'master.html' %} 
+{% extends 'master.html' %}
 {% include 'header.html' %}
 
 {% block title %} Update {% endblock %}
- 
- 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/delete_update.css') }}">
 {% block body %}
 <div class="container">
+    <div class="title">
+        <h2>ACTUALIZAR DATOS</h2>
+    </div>
     <form action='' method="POST">
         <table class="table">
             <tr>
@@ -20,18 +23,21 @@
                 <td>ID de cédula</td>
                 <td><input type="text" name="idcedula" class="form-control" value="{{ reserva.idcedula }}"></td>
             </tr>
-            
-                <select class="form-control" id="ambiente" name="ambiente" required>
-                    <option value="">Seleccione el ambiente que desea reservar</option>
-                    {% for suerte in suerte %}
-                    <option value="{{ 'value' + ambiente.nombreambiente }}">{{ ambiente.nombreambiente }}</option>
-                    {% endfor %}
-                  </select>
-            
+            <tr>
+                <td>Ambiente</td>
+                <td>
+                    <select class="form-control" id="ambiente" name="ambiente" required>
+                        <option value="">Seleccione el ambiente que desea reservar</option>
+                        {% for suerte in suerte %}
+                        <option value="{{ 'value' + ambiente.nombreambiente }}">{{ ambiente.nombreambiente }}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+            </tr>
             <tr>
                 <td colspan="2">
-                    <input type="submit" name="submit" value="Actualizar" class="btn btn-success">
-                    <a href='/registro' class="btn btn-dark">Cancelar</a>
+                    <input type="submit" name="submit" value="Actualizar" class="btn btn-primary">
+                    <a href='/registro' class="btn btn-primary">Cancelar</a>
                 </td>
             </tr>
         </table>
